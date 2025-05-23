@@ -569,3 +569,61 @@ border-radius: .1em;
 .ai-inverse {
   color: #fff;
 }
+
+a {
+  color: rgb(37, 37, 96); /* Change link color to navy */
+  text-decoration: none; /* Optional: Remove underline */
+}
+
+a:hover {
+  color: rgb(62, 62, 129); /* Optional: Change color on hover */
+}
+
+/* Styling for the unit headings */
+.unit-heading {
+  font-size: 1.2rem; /* Smaller font size for subheadings */
+  font-weight: bold;
+  color: rgb(37, 37, 96); /* Custom color for unit headings */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: none; /* Ensure text is not in all caps */
+}
+
+.sidebar {
+  background-color: rgba(150, 169, 199, 0.4); /* Change background color */
+  color: rgb(66, 64, 64); /* Change text color */
+  padding: 20px; /* Add padding */
+  height: 95vh !important; /* Let the height adjust automatically */
+}
+
+/* Container for the miscellaneous blocks */
+.miscellaneous-container {
+  margin-left: 270px; /* Ensure it aligns with the sidebar */
+  padding: 20px;
+  max-width: calc(100% - 270px); /* Adjust width to fit next to the sidebar */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Individual blocks */
+.miscellaneous-block {
+  margin-bottom: 20px; /* Add spacing between blocks */
+  padding: 0; /* Remove padding */
+  border: none; /* Remove border */
+  background: none; /* Remove background color */
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Block titles */
+.miscellaneous-block h2 {
+  margin-top: 0;
+  color: inherit; /* Use the default text color */
+  font-size: inherit; /* Use the default font size */
+  font-weight: normal; /* Use normal font weight */
+}
+
+/* Block text */
+.miscellaneous-block p {
+  color: inherit; /* Use the default text color */
+  line-height: inherit; /* Use the default line height */
+  margin: 0; /* Remove extra margins */
+}
