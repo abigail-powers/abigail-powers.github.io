@@ -609,30 +609,46 @@ a:hover {
   margin-bottom: 20px; /* Add spacing between blocks */
 }
 
-/* Sidebar styling */
-.sidebar {
-  background-color: rgba(150, 169, 199, 0.4); /* Sidebar background color */
-  color: rgb(66, 64, 64); /* Sidebar text color */
-  padding: 20px;
-  width: 250px; /* Sidebar width */
-  height: 100vh; /* Full height of the viewport */
-  position: fixed; /* Fix the sidebar to the left */
-  top: 0;
-  left: 0;
-  overflow-y: auto; /* Add scrolling if the content overflows */
+/* Scoped heading styles */
+.miscellaneous-heading {
+  border-bottom: 2px solid var(--highlight-color); /* Dynamic border color */
+  background-color: var(--heading-bg-color); /* Dynamic background color */
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--heading-text-color); /* Dynamic text color */
+  font-size: 1.2rem; /* Adjust font size for headings */
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .sidebar {
-    position: relative; /* Make the sidebar part of the normal flow */
-    width: 100%; /* Full width for the sidebar */
-    height: auto; /* Adjust height automatically */
-  }
+/* Link styles */
+a {
+  color: var(--link-color); /* Dynamic link color */
+  text-decoration: underline;
+}
 
-  .miscellaneous-container {
-    margin-left: 0; /* Remove left margin */
-    max-width: 100%; /* Full width for the container */
-    padding: 10px; /* Adjust padding for smaller screens */
+a:hover {
+  color: var(--highlight-color); /* Highlight color on hover */
+}
+
+/* Light mode variables */
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: rgb(37, 37, 96); /* Navy link color */
+  --highlight-color: #000000; /* Black for heading borders */
+  --heading-bg-color: #f9f9f9; /* Light gray for heading background */
+  --heading-text-color: #333333; /* Dark text for headings */
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #f9f9f9;
+    --link-color: #9bbcff; /* Light blue for links in dark mode */
+    --highlight-color: #ffffff; /* White for heading borders */
+    --heading-bg-color: #333333; /* Dark gray for heading background */
+    --heading-text-color: #f9f9f9; /* Light text for headings */
   }
 }
