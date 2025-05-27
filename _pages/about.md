@@ -1,9 +1,9 @@
 ---
 permalink: /
-title: "About"
+title: "Welcome"
 author_profile: true
 redirect_from: 
-  - /about/
+  - /home/
   - /about.html
 ---
 I am a  first-year PhD candidate at the Centre d'économie de la Sorbonne (CES) and the Sorbonne School of Economics under the supervision of Prof. [Remi Bazillier](https://remibazillier.wordpress.com). 
