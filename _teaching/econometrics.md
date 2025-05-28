@@ -8,7 +8,9 @@ date: 2025-09-01 - present
 location: "Paris, France"
 ---
 <hr>
+<p style="text-align: justify;">
 This course introduces Masters students to STATA, and applying concepts learned in theoretical using programming skills. The first part of the course focuses on learning programming and data management basics. The second part explores how to implement a range of methodologies including OLS, Panel, non-linear models, and quasi-experiments. 
+</p>
 
 <div class="unit-heading">Unit 1: Introduction to STATA</div>
 - Introduction to STATA User Interface

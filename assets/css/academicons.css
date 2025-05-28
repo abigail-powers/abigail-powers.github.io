@@ -583,7 +583,7 @@ a:hover {
 .unit-heading {
   font-size: 1.2rem; /* Smaller font size for subheadings */
   font-weight: bold;
-  color: rgb(37, 37, 96); /* Custom color for unit headings */
+  color: rgb(113, 113, 164); /* Custom color for unit headings */
   margin-top: 20px;
   margin-bottom: 10px;
   text-transform: none; /* Ensure text is not in all caps */
