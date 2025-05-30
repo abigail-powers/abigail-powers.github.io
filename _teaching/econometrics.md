@@ -1,16 +1,16 @@
 ---
 title: "Econometrics TD: Introduction to Data Analysis and Causal ID in Stata"
 collection: teaching
-type: "Graduate course"
+type: Tutorial Course
 permalink: /teaching/econometrics
-venue: "University Paris 1: Panthéon Sorbonne, PSME"
-date: 2025-09-01 - present
-location: "Paris, France"
+years: "2024–2025, 2025-2026"
+profs: "[Morgane Laouenan](https://sites.google.com/site/morganelaouenan/), [Jérôme Héricourt](https://sites.google.com/site/jpcdhericourt/)"
+level: "Master (First Year)"
+language: "English"
+description: |
+  Course Description: This course introduces Masters students to STATA, and applying concepts learned in theoretical using programming skills. The first part of the course focuses on learning programming and data management basics. The second part explores how to implement a range of methodologies including OLS, Panel, non-linear models, and quasi-experiments.
+order: 1
 ---
-<hr>
-<p style="text-align: justify;">
-This course introduces Masters students to STATA, and applying concepts learned in theoretical using programming skills. The first part of the course focuses on learning programming and data management basics. The second part explores how to implement a range of methodologies including OLS, Panel, non-linear models, and quasi-experiments. 
-</p>
 
 <div class="unit-heading">Unit 1: Introduction to STATA</div>
 - Introduction to STATA User Interface

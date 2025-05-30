@@ -1,16 +1,15 @@
 ---
 title: "Master Thesis Seminar"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/research_seminar
-venue: "University Paris 1: Panthéon Sorbonne, PSME"
-date: 2025-01-01 - present 
-location: "Paris, France"
+type: "Master Research Workshop"
+years: "2024–2025, 2025-2026"
+level: "Master (First Year)"
+language: "English"
+permalink: /teaching/research_seminar/
+description: | 
+    This course supports students working on their Master Thesis project for their first-year Master Thesis. It is designed to help students not familiar with academic research design and complete their thesis project. Part 1 of the course explores developing an innovative research idea, situating one's work in the literature, and identifying data. Part 2 of the course covers how to approach empirical analysis and how to structure an academic paper. Students are provided with the opportunity for one-on-one advising for their questions on practical research skills.
+order: 2
 ---
-<hr>
-<p style="text-align: justify;">
-This course supports students working on their Master Thesis project for their first-year Master Thesis. It is designed to help students not familiar with academic research design and complete their thesis project. Part 1 of the course explores developing an innovative research idea, situating one's work in the literature, and identifying data. Part 2 of the course covers how to approach empirical analysis and how to structure an academic paper. Students are provided with the opportunity for one-on-one advising for their questions on practical research skills.
-</p>
 
 <div class="unit-heading">Unit 1: Design a Research Idea</div>
 - Identifying research questions.

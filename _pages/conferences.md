@@ -5,7 +5,20 @@ permalink: /conferences/
 author_profile: true
 ---
 
-<div class="conferences">
+## Upcoming Conferences
+
+<div class="conference-card">
+  <h3>
+    <a href="https://icde2025.sciencesconf.org" target="_blank">
+      International Conference on Development Economies
+    </a>
+  </h3>
+  <p><strong>Date:</strong> July 2 - 4, 2025</p>
+  <p><strong>Location:</strong> University Paris Nanterre - Nanterre, France </p>
+  <p> Format TBA - <em>Local Sectoral Minimum Wage Policies in India</em></p>
+</div>
+
+## Past Conferences
 
 <div class="conference-card">
   <h3>
@@ -38,6 +51,4 @@ author_profile: true
   <p><strong>Date:</strong> January 9, 2025</p>
   <p><strong>Location:</strong> Sorbonne School of Economics – Paris, France</p>
   <p>First dissertation paper: <em>Local Sectoral Minimum Wages in India: Impacts on Worker Outcomes</em></p>
-</div>
-
 </div>
