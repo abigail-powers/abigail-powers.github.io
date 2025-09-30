@@ -11,12 +11,194 @@ author_profile: true
   {% include archive-single.html %}
 {% endfor %}
 
+<style>
+.responsibility-entry {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  font-size: 0.9em;
+}
+
+.responsibility-header {
+  display: flex;
+  gap: 20px;
+}
+
+.responsibility-years {
+  flex-shrink: 0;
+  width: 150px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.95em;
+}
+
+.responsibility-content {
+  flex: 1;
+}
+
+.responsibility-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #212529;
+  font-size: 1.1em;
+}
+
+.responsibility-main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 30px;
+}
+
+.responsibility-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.responsibility-role {
+  margin-bottom: 2px; /* Consistent small spacing */
+}
+
+.responsibility-role p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.responsibility-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.responsibility-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.responsibility-links li {
+  margin-bottom: 5px;
+}
+
+.responsibility-links a {
+  color: #52adc8;
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85em;
+}
+
+.responsibility-links a:hover {
+  color: #3d8da3;
+  text-decoration: none;
+}
+
+.responsibility-description {
+  margin-top: 5px;
+}
+
+.responsibility-description details summary {
+  list-style: none;
+  font-size: 0.9em;
+}
+
+.responsibility-description details summary::-webkit-details-marker {
+  display: none;
+}
+
+.responsibility-description p {
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .responsibility-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .responsibility-years {
+    width: auto;
+  }
+  
+  .responsibility-main-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>
+
 <hr>
 
 <h2>Other Academic Responsibilities</h2>
-<h3>Conference Series in Economics Development - President (2024-2025)</h3>
-Lead organization of a series of conferences, contacting speakers, chairing sessions, and logistical coordination.
-<details>
-  <summary><strong>Seminar Description:</strong></summary>
-  <p>This seminar invites professionals and researchers in the field of Development Economics to present their work to students and discuss current issues in the field. Previous guests include Kunal Sen (UNU-WIDER), Lucas Leblanc (OECD-LEED), Olivia Cuq (OECD Developement), Andrea Cinque (OECD Development Centre) </p>
-</details>
+<hr>
+
+<div class="responsibility-entry">
+  <div class="responsibility-header">
+    <div class="responsibility-years">2025–2026</div>
+    <div class="responsibility-content">
+      <h3>CES ESD-IELM Internal Seminar</h3>
+      <div class="responsibility-main-info">
+        <div class="responsibility-details">
+          <div class="responsibility-role">
+            <p><strong>Role:</strong> Seminar Co-Organizer</p>
+          </div>
+        </div>
+        
+        <div class="responsibility-links">
+          <ul>
+            <li><a href="https://internalsem.wordpress.com" target="_blank"><i class="fa fa-external-link"></i> Seminar Website</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="responsibility-description">
+        <details>
+          <summary><strong>▼ Seminar Description:</strong></summary>
+          <p> This seminar is a forum for both young and senior researchers from the CES International Economics and Labor Markets (IELM), Economics of Sustainable Development (ESD) and Financial Globalization (FG) groups can share ongoing work and engage in constructive discussions. </p>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="responsibility-entry">
+  <div class="responsibility-header">
+    <div class="responsibility-years">2024–present</div>
+    <div class="responsibility-content">
+      <h3>Conference Series in Development Economics (CSDE)</h3>
+      <div class="responsibility-main-info">
+        <div class="responsibility-details">
+          <div class="responsibility-role">
+            <p><strong>Role:</strong> President (2024-2025), Treasurer (2025-2026)</p>
+          </div>
+          <div class="responsibility-speakers">
+            <p><strong>Invited Speakers:</strong> Andrea Cinque, Olivia Cuq, Kunal Sen, Lucas Leblanc</p>
+          </div>
+        </div>
+        
+        <div class="responsibility-links">
+          <ul>
+            <li><a href="https://economie-master-developmenteconomics.pantheonsorbonne.fr/actualite/conference-series-development-economics-csde-first-conference-21-november" target="_blank"><i class="fa fa-external-link"></i> 11/2024 Conference</a></li>
+            <li><a href="https://economie-master-developmenteconomics.pantheonsorbonne.fr/actualite/table-ronde-30-avril-2025-lavenir-marches-travail-et-developpement-inclusif" target="_blank"><i class="fa fa-external-link"></i> 04/2025 Conference</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="responsibility-description">
+        <details>
+          <summary><strong>▼ Conference Description:</strong></summary>
+          <p>This seminar invites professionals and researchers in the field of Development Economics to present their work to students and discuss current issues in the field.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>

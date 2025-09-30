@@ -6,7 +6,9 @@ author_profile: true
 ---
 
 ## Upcoming Conferences
+TBA
 
+## Past Conferences
 <div class="conference-card">
   <h3>
     <a href="https://icde2025.sciencesconf.org" target="_blank">
@@ -15,10 +17,8 @@ author_profile: true
   </h3>
   <p><strong>Date:</strong> July 2 - 4, 2025</p>
   <p><strong>Location:</strong> University Paris Nanterre - Nanterre, France </p>
-  <p> Format TBA - <em>Local Sectoral Minimum Wage Policies in India</em></p>
+  <p> Presentation - <em>Local Sectoral Minimum Wage Policies in India</em></p>
 </div>
-
-## Past Conferences
 
 <div class="conference-card">
   <h3>
@@ -51,4 +51,15 @@ author_profile: true
   <p><strong>Date:</strong> January 9, 2025</p>
   <p><strong>Location:</strong> Sorbonne School of Economics – Paris, France</p>
   <p>First dissertation paper: <em>Local Sectoral Minimum Wages in India: Impacts on Worker Outcomes</em></p>
+</div>
+
+<div class="conference-card">
+  <h3>
+    <a href="https://www.icmigrations.cnrs.fr/en/dimig" target="_blank">
+      Workshop "Migration Economics & the Political Economy of Immigration"
+    </a>
+  </h3>
+  <p><strong>Date:</strong> October 13, 2023</p>
+  <p><strong>Location:</strong> University Paris 1: Panthéon Sorbonne - Paris, France </p>
+  <p>Research Internship Presentation: <em>Bibliometric Analysis </em></p>
 </div>

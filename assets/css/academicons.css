@@ -700,3 +700,212 @@ a:hover {
   color: #4b7096;
 }
 
+<!-- Add this to your existing CSS section -->
+<style>
+  /* Add responsive styles */
+  .research-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .research-heading {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .research-text {
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .research-links {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  
+  /* Visual Abstract Styling */
+  .research-visual-abstract {
+    margin: 20px 0 30px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .research-visual-abstract h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #495057;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  
+  .research-visual-abstract iframe {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .research-visual-abstract .caption {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .research-container {
+      padding: 0 10px;
+    }
+    
+    .research-visual-abstract {
+      margin: 15px 0 20px 0;
+      padding: 10px;
+    }
+    
+    .research-visual-abstract iframe {
+      height: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .research-visual-abstract iframe {
+      height: 350px;
+    }
+  }
+</style>
+
+<style>
+.responsibility-entry {
+  margin: 30px 0; /* Increased from 20px for more spacing between blocks */
+  padding: 15px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  font-size: 0.9em;
+}
+
+.responsibility-header {
+  display: flex;
+  gap: 20px;
+}
+
+.responsibility-years {
+  flex-shrink: 0;
+  width: 150px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.95em;
+}
+
+.responsibility-content {
+  flex: 1;
+}
+
+.responsibility-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #212529;
+  font-size: 1.1em;
+}
+
+.responsibility-main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 30px;
+}
+
+.responsibility-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.responsibility-role, 
+.responsibility-speakers {
+  margin-bottom: 5px;
+}
+
+.responsibility-role p, 
+.responsibility-speakers p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.responsibility-links {
+  flex: 1;
+  min-width: 200px;
+}
+
+.responsibility-links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.responsibility-links li {
+  margin-bottom: 5px;
+}
+
+.responsibility-links a {
+  color: #52adc8; /* Blue-gray color to match your website theme */
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85em;
+}
+
+.responsibility-links a:hover {
+  color: #3d8da3; /* Darker blue-gray for hover state */
+  text-decoration: none;
+}
+
+.responsibility-description {
+  margin-top: 5px;
+}
+
+.responsibility-description details summary {
+  list-style: none;
+  font-size: 0.9em;
+}
+
+.responsibility-description details summary::-webkit-details-marker {
+  display: none;
+}
+
+.responsibility-description p {
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Add extra spacing after the last responsibility block */
+.responsibility-entry:last-of-type {
+  margin-bottom: 40px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .responsibility-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .responsibility-years {
+    width: auto;
+  }
+  
+  .responsibility-main-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style>

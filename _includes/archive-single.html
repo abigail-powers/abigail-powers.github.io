@@ -26,38 +26,59 @@
       </div>
     {% endif %}
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+    {% if post.collection != 'teaching' %}
+      <h2 class="archive__item-title" itemprop="headline">
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </h2>
+      
+      {% if post.read_time %}
+        <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
       {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
     {% endif %}
 
 {% if post.collection == 'teaching' %}
-  <div class="teaching-entry">
-    <div class="teaching-years">{{ post.years }}</div>
-    <div class="teaching-type"><strong>{{ post.type }}</strong></div>
-    <div class="teaching-details">
-      {% if post.profs %}
-        <strong>Main Professor:</strong> {{ post.profs | markdownify | remove: '<p>' | remove: '</p>' }}<br>
-      {% endif %}
-      <strong>Language:</strong> {{ post.language }}<br>
-      {% if post.class_link %}
-        <a href="{{ post.class_link }}" target="_blank" style="color:#a94442;">
-          <i class="fa fa-external-link"></i> Class link
-        </a><br>
-      {% endif %}
-      {% if post.description %}
-  <details>
-    <summary><strong> Description:</strong></summary>
-    {{ post.description }}
-  </details>
-{% endif %}
+  <div class="responsibility-entry">
+    <div class="responsibility-header">
+      <div class="responsibility-years">{{ post.years }}</div>
+      <div class="responsibility-content">
+        <h3><a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ post.title }}</a></h3>
+        <div class="responsibility-main-info">
+          <div class="responsibility-details">
+            <div class="responsibility-role">
+              <p><strong>Type:</strong> {{ post.type }}</p>
+            </div>
+            {% if post.profs %}
+            <div class="responsibility-role">
+              <p><strong>Main Professor:</strong> {{ post.profs | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+            </div>
+            {% endif %}
+            <div class="responsibility-role">
+              <p><strong>Language:</strong> {{ post.language }}</p>
+            </div>
+          </div>
+          
+          {% if post.class_link %}
+          <div class="responsibility-links">
+            <ul>
+              <li><a href="{{ post.class_link }}" target="_blank"><i class="fa fa-external-link"></i> Class Link</a></li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+        
+        {% if post.description %}
+        <div class="responsibility-description">
+          <details>
+            <summary><strong>▼ Course Description:</strong></summary>
+            <p>{{ post.description }}</p>
+          </details>
+        </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 {% elsif post.collection == 'publications' %}
