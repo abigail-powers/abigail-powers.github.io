@@ -12,13 +12,160 @@ author_profile: true
 {% endfor %}
 
 <style>
+/* Light mode (default) - Light Blue Theme */
 .responsibility-entry {
   margin: 20px 0;
   padding: 15px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #bbdefb;
   border-radius: 8px;
-  background-color: #f8f9fa;
+  background-color: #e3f2fd;
   font-size: 0.9em;
+  color: #1565c0;
+}
+
+.responsibility-years {
+  flex-shrink: 0;
+  width: 150px;
+  font-weight: 600;
+  color: #1976d2;
+  font-size: 0.95em;
+}
+
+.responsibility-content h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1565c0;
+  font-size: 1.1em;
+}
+
+.responsibility-content h3 a {
+  color: #1565c0;
+  text-decoration: none;
+}
+
+.responsibility-role p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #1565c0;
+}
+
+.responsibility-description details summary {
+  list-style: none;
+  font-size: 0.9em;
+  color: #1565c0;
+}
+
+.responsibility-description p {
+  font-size: 0.85em;
+  line-height: 1.4;
+  margin-top: 10px;
+  color: #1565c0;
+}
+
+/* Dark mode - Dark Blue-Grey Theme */
+@media (prefers-color-scheme: dark) {
+  .responsibility-entry {
+    background-color: #37474f !important;
+    border-color: #546e7a !important;
+    color: #b0bec5 !important;
+  }
+  
+  .responsibility-years {
+    color: #90a4ae !important;
+  }
+  
+  .responsibility-content h3 {
+    color: #b0bec5 !important;
+  }
+  
+  .responsibility-content h3 a {
+    color: #b0bec5 !important;
+  }
+  
+  .responsibility-role p {
+    color: #b0bec5 !important;
+  }
+  
+  .responsibility-description details summary {
+    color: #b0bec5 !important;
+  }
+  
+  .responsibility-description p {
+    color: #b0bec5 !important;
+  }
+}
+
+/* Additional dark mode support for various implementations */
+html.dark .responsibility-entry,
+body.dark .responsibility-entry,
+.dark .responsibility-entry,
+html[data-theme="dark"] .responsibility-entry,
+body[data-theme="dark"] .responsibility-entry,
+html.theme-dark .responsibility-entry,
+body.theme-dark .responsibility-entry {
+  background-color: #37474f !important;
+  border-color: #546e7a !important;
+  color: #b0bec5 !important;
+}
+
+html.dark .responsibility-years,
+body.dark .responsibility-years,
+.dark .responsibility-years,
+html[data-theme="dark"] .responsibility-years,
+body[data-theme="dark"] .responsibility-years,
+html.theme-dark .responsibility-years,
+body.theme-dark .responsibility-years {
+  color: #90a4ae !important;
+}
+
+html.dark .responsibility-content h3,
+body.dark .responsibility-content h3,
+.dark .responsibility-content h3,
+html[data-theme="dark"] .responsibility-content h3,
+body[data-theme="dark"] .responsibility-content h3,
+html.theme-dark .responsibility-content h3,
+body.theme-dark .responsibility-content h3 {
+  color: #b0bec5 !important;
+}
+
+html.dark .responsibility-content h3 a,
+body.dark .responsibility-content h3 a,
+.dark .responsibility-content h3 a,
+html[data-theme="dark"] .responsibility-content h3 a,
+body[data-theme="dark"] .responsibility-content h3 a,
+html.theme-dark .responsibility-content h3 a,
+body.theme-dark .responsibility-content h3 a {
+  color: #b0bec5 !important;
+}
+
+html.dark .responsibility-role p,
+body.dark .responsibility-role p,
+.dark .responsibility-role p,
+html[data-theme="dark"] .responsibility-role p,
+body[data-theme="dark"] .responsibility-role p,
+html.theme-dark .responsibility-role p,
+body.theme-dark .responsibility-role p {
+  color: #b0bec5 !important;
+}
+
+html.dark .responsibility-description details summary,
+body.dark .responsibility-description details summary,
+.dark .responsibility-description details summary,
+html[data-theme="dark"] .responsibility-description details summary,
+body[data-theme="dark"] .responsibility-description details summary,
+html.theme-dark .responsibility-description details summary,
+body.theme-dark .responsibility-description details summary {
+  color: #b0bec5 !important;
+}
+
+html.dark .responsibility-description p,
+body.dark .responsibility-description p,
+.dark .responsibility-description p,
+html[data-theme="dark"] .responsibility-description p,
+body[data-theme="dark"] .responsibility-description p,
+html.theme-dark .responsibility-description p,
+body.theme-dark .responsibility-description p {
+  color: #b0bec5 !important;
 }
 
 .responsibility-header {
@@ -26,23 +173,12 @@ author_profile: true
   gap: 20px;
 }
 
-.responsibility-years {
-  flex-shrink: 0;
-  width: 150px;
-  font-weight: 600;
-  color: #495057;
-  font-size: 0.95em;
-}
-
 .responsibility-content {
   flex: 1;
 }
 
-.responsibility-content h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #212529;
-  font-size: 1.1em;
+.responsibility-content h3 a:hover {
+  text-decoration: underline;
 }
 
 .responsibility-main-info {
@@ -61,11 +197,6 @@ author_profile: true
 
 .responsibility-role {
   margin-bottom: 2px; /* Consistent small spacing */
-}
-
-.responsibility-role p {
-  margin: 0;
-  font-size: 0.9em;
 }
 
 .responsibility-links {
@@ -101,19 +232,8 @@ author_profile: true
   margin-top: 5px;
 }
 
-.responsibility-description details summary {
-  list-style: none;
-  font-size: 0.9em;
-}
-
 .responsibility-description details summary::-webkit-details-marker {
   display: none;
-}
-
-.responsibility-description p {
-  font-size: 0.85em;
-  line-height: 1.4;
-  margin-top: 10px;
 }
 
 /* Responsive design */
@@ -202,3 +322,65 @@ author_profile: true
     </div>
   </div>
 </div>
+
+<script>
+// Immediate execution - don't wait for DOM
+(function() {
+  function applyDarkMode() {
+    // Force check multiple ways
+    const isDark = 
+      window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ||
+      document.documentElement.classList.contains('dark') ||
+      document.body.classList.contains('dark') ||
+      document.documentElement.getAttribute('data-theme') === 'dark' ||
+      localStorage.getItem('theme') === 'dark';
+    
+    if (isDark) {
+      // Add CSS directly to head
+      const style = document.createElement('style');
+      style.textContent = `
+        .responsibility-entry {
+          background-color: #2d3748 !important;
+          border-color: #4a5568 !important;
+          color: #e2e8f0 !important;
+        }
+        .responsibility-years {
+          color: #cbd5e0 !important;
+        }
+        .responsibility-content h3,
+        .responsibility-content h3 a,
+        .responsibility-role p,
+        .responsibility-description summary,
+        .responsibility-description p {
+          color: #e2e8f0 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }
+  
+  // Run immediately
+  applyDarkMode();
+  
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyDarkMode);
+  }
+  
+  // Run when everything is loaded
+  window.addEventListener('load', applyDarkMode);
+  
+  // Check every 500ms for the first 5 seconds (in case of slow loading)
+  let checks = 0;
+  const interval = setInterval(() => {
+    applyDarkMode();
+    checks++;
+    if (checks > 10) clearInterval(interval);
+  }, 500);
+  
+  // Listen for changes
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyDarkMode);
+  }
+})();
+</script>
