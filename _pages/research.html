@@ -28,6 +28,26 @@ author_profile: true
     margin-bottom: 30px;
   }
   
+  /* Collapsible abstract styles */
+  details {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  details summary {
+    color: black;
+    text-decoration: none;
+    user-select: none;
+  }
+  
+  details summary:hover {
+    color: black;
+  }
+  
+  details p {
+    margin-top: 15px;
+  }
+  
   /* Responsive adjustments */
   @media screen and (max-width: 768px) {
     .research-container {
@@ -41,9 +61,18 @@ author_profile: true
     <h2 class="research-heading">
       Winners and Losers: Local Sectoral Minimum Wages and Informality in India
     </h2>
-    <p class="research-text">
-      I leverage the dual variation in Indian minimum wage regulations across states and sectors to examine their impact on workers' wages and employment outcomes. Using text-analysis models, I construct a comprehensive database of state-sector minimum wages in India and integrate it with individual-level data from a nationally representative labor force survey. To conduct causal analysis, I apply a continuous two-way fixed effects (difference-in-difference) model, enabling me to assess the effects of minimum wage increases on wages and employment. The findings reveal that higher minimum wages result in significant wage gains for formal workers but lead to wage reductions for informal workers. Employment effects suggest that employers increasingly rely on informal workers to circumvent minimum wage requirements as increases in the minimum wage increase hours worked by informal workers, aligning with the dual labor market theory. These results indicate that while highly flexible minimum wages may lack clarity and fail to generate a lighthouse effect, they remain an effective mechanism for safeguarding formal-sector workers.
-    </p>
+    <details>
+      <summary>Abstract</summary>
+      <p class="research-text">
+        I leverage the dual variation in Indian minimum wage regulations across states and sectors to examine their impact on workers' wages and employment outcomes. Using text-analysis models, I construct a comprehensive database of state-sector minimum wages in India and integrate it with individual-level data from a nationally representative labor force survey. To conduct causal analysis, I apply a continuous two-way fixed effects (difference-in-difference) model, enabling me to assess the effects of minimum wage increases on wages and employment. The findings reveal that higher minimum wages result in significant wage gains for formal workers but lead to wage reductions for informal workers. Employment effects suggest that employers increasingly rely on informal workers to circumvent minimum wage requirements as increases in the minimum wage increase hours worked by informal workers, aligning with the dual labor market theory. These results indicate that while highly flexible minimum wages may lack clarity and fail to generate a lighthouse effect, they remain an effective mechanism for safeguarding formal-sector workers.
+      </p>
+    </details>
+    <div style="margin-top: 20px; text-align: center;">
+      <img src="{{ site.baseurl }}/images/minimum-wage-india-map.png" alt="Cross-State Minimum Wage Variation in India" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+      <p style="font-size: 0.9em; color: #666; font-style: italic;">
+        Note: Map of multidimensional evolution of minimum wages in India. Source: Author calculations based on original data. 
+      </p>
+    </div>
     <div class="research-links">
         Working Paper Available Upon Request | <a href="{{ site.baseurl }}/files/P1_Slides.pdf" target="_blank" style="text-decoration: underline;">Slides (update: July 2025)</a>
     </div>
@@ -54,17 +83,23 @@ author_profile: true
       Digging for Jobs: Mine Openings, Agglomeration, and Local Labor Markets in Zambia
     </h2>
     <p style="margin-bottom: 10px; font-size: 0.95em;"><strong>With:</strong> <a href="https://remibazillier.wordpress.com" target="_blank">Rémi Bazillier</a>, Agathe Loyer </p>
-    <p class="research-text">
-      This paper will analyze the labor market effects of agglomerations around industrial mining sites in subsaharan Africa. It explores a key trend of urbanization in the region, where mining activities have led to the emergence of urban centers. Counter to traditional urbanization, mining agglomeration is driven by a single sector, which raises questions about the feasibility of agglomeration economies for labor markets. While agglomeration is traditionally predicted to lead to increased competition for workers and improved outcomes; it is unclear if mining agglomeration expands outside options for workers and translate to better labor market outcomes. This paper matches geolocated mining data with lasbor force survey data, and employs a spatial regression discontinuity design for causal identification of mining on workers' outcomes by way of agglomeration. 
-    </p>
+    <details>
+      <summary>Abstract</summary>
+      <p class="research-text">
+        This paper will analyze the labor market effects of agglomerations around industrial mining sites in subsaharan Africa. It explores a key trend of urbanization in the region, where mining activities have led to the emergence of urban centers. Counter to traditional urbanization, mining agglomeration is driven by a single sector, which raises questions about the feasibility of agglomeration economies for labor markets. While agglomeration is traditionally predicted to lead to increased competition for workers and improved outcomes; it is unclear if mining agglomeration expands outside options for workers and translate to better labor market outcomes. This paper matches geolocated mining data with lasbor force survey data, and employs a spatial regression discontinuity design for causal identification of mining on workers' outcomes by way of agglomeration. 
+      </p>
+    </details>
   </article>
 
-    <article>
+  <article>
     <h2 class="research-heading">
       Labor Market Concentration: The Role of Informality as An Outside Option
     </h2>
-    <p class="research-text">
-      This paper will explore the impact of labor market concentration on wage dynamics and employment outcomes. It will analyze how informal employment serves as an outside option for workers in concentrated labor markets, affecting their bargaining power and overall job satisfaction. It delves into the diverging hypotheses proposed by the theoretical literature, answering the question: does informality act as a valuable outside option that reintroduces competition in concentrated labor markets or does its abundance underscore the lack of competition by increasing the attractiveness of formal sector work? I employ a instrumental variables strategy on a rich on South African firms and workers to explore the hypothesis of labor market concentration's monopsony-creating effect and its implications for wage dynamics when the labor market is dualistic. I construct a theoretical model exploring the behavior of labor markets and the potential outcomes for workers to interpret my findings.  
-    </p>
+    <details>
+      <summary>Abstract</summary>
+      <p class="research-text">
+        This paper will explore the impact of labor market concentration on wage dynamics and employment outcomes. It will analyze how informal employment serves as an outside option for workers in concentrated labor markets, affecting their bargaining power and overall job satisfaction. It delves into the diverging hypotheses proposed by the theoretical literature, answering the question: does informality act as a valuable outside option that reintroduces competition in concentrated labor markets or does its abundance underscore the lack of competition by increasing the attractiveness of formal sector work? I employ a instrumental variables strategy on a rich on South African firms and workers to explore the hypothesis of labor market concentration's monopsony-creating effect and its implications for wage dynamics when the labor market is dualistic. I construct a theoretical model exploring the behavior of labor markets and the potential outcomes for workers to interpret my findings.  
+      </p>
+    </details>
   </article>
 </div>
