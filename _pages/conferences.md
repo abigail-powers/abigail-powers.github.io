@@ -6,9 +6,20 @@ author_profile: true
 ---
 
 ## Upcoming Conferences
-TBA
+I will present my work at the <a href="https://afse2026.sciencesconf.org" target = "blank"> AFSE 2026 Annual Conference </a>
 
 ## Past Conferences
+<div class="conference-card">
+  <h3>
+    <a href="https://icde2025.sciencesconf.org" target="_blank">
+      Sorbonne Young Researcher Seminar
+    </a>
+  </h3>
+  <p><strong>Date:</strong> May 7, 2026 </p>
+  <p><strong>Location:</strong> CES – Paris, France </p>
+  <p> Presentation - <em> Digging for Jobs: Mine Openings, Agglomeration, and Local Labor Markets in Zambia </em></p>
+</div>
+
 <div class="conference-card">
   <h3>
     <a href="https://icde2025.sciencesconf.org" target="_blank">
@@ -45,11 +56,11 @@ TBA
 <div class="conference-card">
   <h3>
     <a href="https://sites.google.com/view/semgsie/accueil" target="_blank">
-      Sorbonne School of Economics Young Researcher Seminar
+      CES Young Researcher Seminar
     </a>
   </h3>
   <p><strong>Date:</strong> January 9, 2025</p>
-  <p><strong>Location:</strong> Sorbonne School of Economics – Paris, France</p>
+  <p><strong>Location:</strong> CES – Paris, France</p>
   <p>First dissertation paper: <em>Local Sectoral Minimum Wages in India: Impacts on Worker Outcomes</em></p>
 </div>
 
