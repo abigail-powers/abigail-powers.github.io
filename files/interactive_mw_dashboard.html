@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minimum Wage Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <style>
+    html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: #ffffff; color: #1d1d1d; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    #chart { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .titlebox, .controlbox, .legendbox { position: fixed; z-index: 1000; background: rgba(255,255,255,0.95); border: 2px solid #b8b8b8; border-radius: 2px; box-shadow: none; }
+    .titlebox { top: 18px; left: 18px; width: 240px; padding: 6px 8px; }
+    .titlebox h1 { margin: 0 0 1px; font-size: 13px; line-height: 1.05; font-weight: 700; }
+    .titlebox .sub { margin: 0; font-size: 9px; color: #555; line-height: 1.15; }
+    .controlbox { top: 18px; right: 18px; width: 240px; padding: 6px 8px; }
+    .controlbox label { display: block; font-size: 10px; color: #333; margin-bottom: 2px; font-weight: 600; }
+    .controlbox select { width: 100%; padding: 4px 6px; border-radius: 2px; border: 1px solid #b7b7b7; background: white; font-size: 11px; }
+    .controlgrid { display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .yearline { display: flex; gap: 4px; align-items: center; }
+    .yearline input[type=range] { width: 100%; }
+    .yearpill { min-width: 48px; text-align: center; padding: 3px 4px; border-radius: 2px; background: #fff; color: #1d1d1d; border: 1px solid #b7b7b7; font-weight: 600; font-size: 10px; }
+    .legendbox { bottom: 18px; left: 18px; width: 200px; padding: 8px 10px; font-size: 10px; line-height: 1.2; }
+    .legendbox h4 { margin: 0 0 6px; font-size: 12px; font-weight: 700; }
+    .legendrow { display: flex; align-items: center; gap: 6px; margin: 0 0 3px; }
+    .swatch { width: 10px; height: 10px; border-radius: 0; border: 1px solid rgba(0,0,0,0.15); flex: 0 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="titlebox">
+    <h1>India Minimum Wage Dashboard 2004-2019 </h1>
+    <p class="sub">State minimum wage increases sector and year. No raw wage values are shown, wage rates sorted into quintiles.</p>
+  </div>
+
+  <div class="controlbox">
+    <div class="controlgrid">
+      <div>
+        <label for="sectorSelect">Sector</label>
+        <select id="sectorSelect"><option value="agriculture, foresty and fishing">agriculture, foresty and fishing</option>
+<option value="manufacturing">manufacturing</option>
+<option value="transport and storage">transport and storage</option>
+<option value="wholesale and retail trade; repair of motor">wholesale and retail trade; repair of motor</option>
+<option value="accomodation">accomodation</option>
+<option value="mining and quarrying">mining and quarrying</option>
+<option value="human health and social work activities">human health and social work activities</option>
+<option value="administrative and support service activities">administrative and support service activities</option>
+<option value="arts, entertainment and recreation">arts, entertainment and recreation</option>
+<option value="education">education</option>
+<option value="electricity, gas, steam and aircondition supply">electricity, gas, steam and aircondition supply</option>
+<option value="public administration and defence; compulsory social security">public administration and defence; compulsory social security</option>
+<option value="construction">construction</option>
+<option value="other service activities">other service activities</option>
+<option value="activities of households as employers; undifferentiated">activities of households as employers; undifferentiated</option>
+<option value="financial and insurance activities">financial and insurance activities</option>
+<option value="professional, scientific and technical activities">professional, scientific and technical activities</option>
+<option value="information and communication">information and communication</option></select>
+      </div>
+      <div>
+        <label for="yearSlider">Year</label>
+        <div class="yearline">
+          <input id="yearSlider" type="range" min="0" max="14" step="1" value="0" />
+          <div class="yearpill" id="yearLabel"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legendbox">
+    <h4 id="legendTitle">Minimum Wage Quintile Legend</h4>
+    <div class="legendrow"><span class="swatch" style="background:#FAE9A0FF"></span><span id="q1Label">Q1</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#DBD797FF"></span><span id="q2Label">Q2</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#9CB484FF"></span><span id="q3Label">Q3</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#5E9171FF"></span><span id="q4Label">Q4</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#005C55FF"></span><span id="q5Label">Q5</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#ffffff"></span><span>No data</span></div>
+  </div>
+
+  <div id="chart"></div>
+
+  <script src="interactive_mw_dashboard_assets/india_states.js"></script>
+  <script src="interactive_mw_dashboard_assets/mw_dashboard_data.js"></script>
+
+  <script>
+    const COLORS = ['#ffffff', '#FAE9A0FF', '#DBD797FF', '#9CB484FF', '#5E9171FF', '#005C55FF'];
+
+    const sectorSelect = document.getElementById('sectorSelect');
+    const yearSlider = document.getElementById('yearSlider');
+    const yearLabel = document.getElementById('yearLabel');
+    const legendTitle = document.getElementById('legendTitle');
+    const q1Label = document.getElementById('q1Label');
+    const q2Label = document.getElementById('q2Label');
+    const q3Label = document.getElementById('q3Label');
+    const q4Label = document.getElementById('q4Label');
+    const q5Label = document.getElementById('q5Label');
+
+    function bucketText(code) {
+      return code === 0 ? 'No data' : `Q${code}`;
+    }
+
+    function makeTrace(sector, yearIndex) {
+      const year = MW_DASHBOARD_DATA.years[yearIndex];
+      const z = MW_DASHBOARD_DATA.payload[sector].years[year];
+      return {
+        type: 'choropleth',
+        geojson: INDIA_STATES_GEOJSON,
+        featureidkey: 'properties.state_name',
+        locations: MW_DASHBOARD_DATA.states,
+        z: z,
+        text: z.map(bucketText),
+        zmin: 0,
+        zmax: 5,
+        colorscale: [
+          [0.00, COLORS[0]],
+          [0.1999, COLORS[0]],
+          [0.2, COLORS[1]],
+          [0.3999, COLORS[1]],
+          [0.4, COLORS[2]],
+          [0.5999, COLORS[2]],
+          [0.6, COLORS[3]],
+          [0.7999, COLORS[3]],
+          [0.8, COLORS[4]],
+          [1.0, COLORS[5]],
+        ],
+        showscale: false,
+        marker: { line: { color: 'rgba(70,70,70,0.85)', width: 0.6 } },
+        hovertemplate: '%{location}<br>%{text}<extra></extra>',
+      };
+    }
+
+    const layout = {
+      geo: {
+        scope: 'world',
+        projection: { type: 'mercator' },
+        fitbounds: 'locations',
+        showframe: false,
+        showcountries: false,
+        showcoastlines: false,
+        showland: false,
+        showocean: false,
+        bgcolor: '#ffffff',
+      },
+      margin: { l: 0, r: 0, t: 0, b: 0 },
+      paper_bgcolor: '#ffffff',
+      plot_bgcolor: '#ffffff',
+      title: { text: '', font: { size: 18 } },
+    };
+
+    function formatRange(lo, hi) {
+      return `${Math.round(lo).toLocaleString()}–${Math.round(hi).toLocaleString()}`;
+    }
+
+    function updateLegend(sector) {
+      const edges = MW_DASHBOARD_DATA.payload[sector].quintile_edges || [];
+      legendTitle.textContent = `Quintile Legend`;
+      if (edges.length === 6) {
+        q1Label.textContent = `Q1: ${formatRange(edges[0], edges[1])}`;
+        q2Label.textContent = `Q2: ${formatRange(edges[1], edges[2])}`;
+        q3Label.textContent = `Q3: ${formatRange(edges[2], edges[3])}`;
+        q4Label.textContent = `Q4: ${formatRange(edges[3], edges[4])}`;
+        q5Label.textContent = `Q5: ${formatRange(edges[4], edges[5])}`;
+      } else {
+        q1Label.textContent = 'Q1';
+        q2Label.textContent = 'Q2';
+        q3Label.textContent = 'Q3';
+        q4Label.textContent = 'Q4';
+        q5Label.textContent = 'Q5';
+      }
+    }
+
+    function render() {
+      const sector = sectorSelect.value;
+      const yearIndex = Number(yearSlider.value);
+      yearLabel.textContent = MW_DASHBOARD_DATA.years[yearIndex];
+      layout.title.text = `${sector} — ${MW_DASHBOARD_DATA.years[yearIndex]}`;
+      updateLegend(sector);
+      Plotly.react('chart', [makeTrace(sector, yearIndex)], layout, {responsive: true, displayModeBar: false});
+    }
+
+    sectorSelect.addEventListener('change', render);
+    yearSlider.addEventListener('input', render);
+
+    yearSlider.max = MW_DASHBOARD_DATA.years.length - 1;
+    yearLabel.textContent = MW_DASHBOARD_DATA.years[0];
+    render();
+  </script>
+</body>
+</html>

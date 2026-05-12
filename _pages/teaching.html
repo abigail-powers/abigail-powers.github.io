@@ -12,54 +12,120 @@ author_profile: true
 {% endfor %}
 
 <style>
-/* Light mode (default) - Light Blue Theme */
+/* Light mode (default) - Muted Blue Theme */
 .responsibility-entry {
   margin: 20px 0;
   padding: 15px;
-  border: 1px solid #bbdefb;
+  border: 1px solid #8ca1b0;
   border-radius: 8px;
-  background-color: #e3f2fd;
+  background-color: #d0dce5;
   font-size: 0.9em;
-  color: #1565c0;
+  color: #4a5f70;
 }
 
 .responsibility-years {
   flex-shrink: 0;
   width: 150px;
   font-weight: 600;
-  color: #1976d2;
+  color: #5a7080;
   font-size: 0.95em;
 }
 
 .responsibility-content h3 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #1565c0;
+  color: #4a5f70;
   font-size: 1.1em;
 }
 
 .responsibility-content h3 a {
-  color: #1565c0;
+  color: #4a5f70;
   text-decoration: none;
 }
 
 .responsibility-role p {
   margin: 0;
   font-size: 0.9em;
-  color: #1565c0;
+  color: #4a5f70;
 }
 
 .responsibility-description details summary {
   list-style: none;
   font-size: 0.9em;
-  color: #1565c0;
+  color: #4a5f70;
 }
 
 .responsibility-description p {
   font-size: 0.85em;
   line-height: 1.4;
   margin-top: 10px;
-  color: #1565c0;
+  color: #4a5f70;
+}
+
+/* Light mode class-based selectors - ensure they override dark mode */
+html:not(.dark) .responsibility-entry,
+body:not(.dark) .responsibility-entry,
+html:not([data-theme="dark"]) .responsibility-entry,
+body:not([data-theme="dark"]) .responsibility-entry,
+html:not(.theme-dark) .responsibility-entry,
+body:not(.theme-dark) .responsibility-entry {
+  background-color: #d0dce5 !important;
+  border-color: #8ca1b0 !important;
+  color: #4a5f70 !important;
+}
+
+html:not(.dark) .responsibility-years,
+body:not(.dark) .responsibility-years,
+html:not([data-theme="dark"]) .responsibility-years,
+body:not([data-theme="dark"]) .responsibility-years,
+html:not(.theme-dark) .responsibility-years,
+body:not(.theme-dark) .responsibility-years {
+  color: #5a7080 !important;
+}
+
+html:not(.dark) .responsibility-content h3,
+body:not(.dark) .responsibility-content h3,
+html:not([data-theme="dark"]) .responsibility-content h3,
+body:not([data-theme="dark"]) .responsibility-content h3,
+html:not(.theme-dark) .responsibility-content h3,
+body:not(.theme-dark) .responsibility-content h3 {
+  color: #4a5f70 !important;
+}
+
+html:not(.dark) .responsibility-content h3 a,
+body:not(.dark) .responsibility-content h3 a,
+html:not([data-theme="dark"]) .responsibility-content h3 a,
+body:not([data-theme="dark"]) .responsibility-content h3 a,
+html:not(.theme-dark) .responsibility-content h3 a,
+body:not(.theme-dark) .responsibility-content h3 a {
+  color: #4a5f70 !important;
+}
+
+html:not(.dark) .responsibility-role p,
+body:not(.dark) .responsibility-role p,
+html:not([data-theme="dark"]) .responsibility-role p,
+body:not([data-theme="dark"]) .responsibility-role p,
+html:not(.theme-dark) .responsibility-role p,
+body:not(.theme-dark) .responsibility-role p {
+  color: #4a5f70 !important;
+}
+
+html:not(.dark) .responsibility-description details summary,
+body:not(.dark) .responsibility-description details summary,
+html:not([data-theme="dark"]) .responsibility-description details summary,
+body:not([data-theme="dark"]) .responsibility-description details summary,
+html:not(.theme-dark) .responsibility-description details summary,
+body:not(.theme-dark) .responsibility-description details summary {
+  color: #4a5f70 !important;
+}
+
+html:not(.dark) .responsibility-description p,
+body:not(.dark) .responsibility-description p,
+html:not([data-theme="dark"]) .responsibility-description p,
+body:not([data-theme="dark"]) .responsibility-description p,
+html:not(.theme-dark) .responsibility-description p,
+body:not(.theme-dark) .responsibility-description p {
+  color: #4a5f70 !important;
 }
 
 /* Dark mode - Dark Blue-Grey Theme */
