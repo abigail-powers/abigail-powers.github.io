@@ -35,13 +35,23 @@ author_profile: true
   }
   
   details summary {
-    color: black;
+    color: #444;
     text-decoration: none;
     user-select: none;
   }
   
   details summary:hover {
-    color: black;
+    color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    details summary {
+      color: #fff !important;
+    }
+
+    details summary:hover {
+      color: #ddd !important;
+    }
   }
   
   details p {

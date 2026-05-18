@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Conferences"
+title: "Conferences & Talks"
 permalink: /conferences/
 author_profile: true
 ---
@@ -11,7 +11,7 @@ I will present my work at the <a href="https://afse2026.sciencesconf.org" target
 ## Past Conferences
 <div class="conference-card">
   <h3>
-    <a href="https://icde2025.sciencesconf.org" target="_blank">
+    <a href="https://internalsem.wordpress.com/2026/04/30/abigail-powers-3/" target="_blank">
       Sorbonne Young Researcher Seminar
     </a>
   </h3>

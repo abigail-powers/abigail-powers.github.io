@@ -604,6 +604,44 @@ a:hover {
   }
 }
 
+/* Ensure details summary labels are readable in dark mode across theme implementations */
+html.dark details summary,
+body.dark details summary,
+html[data-theme="dark"] details summary,
+body[data-theme="dark"] details summary {
+  color: #fff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  details summary {
+    color: #fff !important;
+  }
+
+  details summary:hover {
+    color: #ddd !important;
+  }
+}
+
+@media (max-width: 57.8125em) {
+  .sidebar {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    height: auto !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .sidebar .author__urls-wrapper,
+  .sidebar .author__pronouns,
+  .sidebar .author__bio,
+  .sidebar .author__desktop {
+    display: none !important;
+  }
+
+  .archive .page__title {
+    margin-top: 1rem;
+  }
+}
 
 /* General container styling */
 /* General container styling */

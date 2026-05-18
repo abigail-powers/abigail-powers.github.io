@@ -24,11 +24,33 @@
     .legendrow { display: flex; align-items: center; gap: 6px; margin: 0 0 3px; }
     .swatch { width: 10px; height: 10px; border-radius: 0; border: 1px solid rgba(0,0,0,0.15); flex: 0 0 auto; }
   </style>
+  <style>
+    /* Mobile stacking to avoid dropdowns overlapping the title */
+    @media screen and (max-width: 600px) {
+      .titlebox, .controlbox, .legendbox {
+        left: 8px !important;
+        right: 8px !important;
+        width: auto !important;
+        border-radius: 6px !important;
+        background: rgba(255,255,255,0.98) !important;
+      }
+
+      .titlebox { top: 8px !important; position: fixed !important; }
+      .controlbox { top: 76px !important; position: fixed !important; }
+      .legendbox { bottom: 12px !important; left: 8px !important; right: 8px !important; position: fixed !important; }
+
+      /* Increase select hit size on mobile */
+      .controlbox select { font-size: 14px; padding: 8px 10px; }
+
+      /* Ensure the chart stays fully visible behind the controls */
+      #chart { top: 0; height: 100%; }
+    }
+  </style>
 </head>
 <body>
   <div class="titlebox">
     <h1>India Minimum Wage Dashboard 2004-2019 </h1>
-    <p class="sub">State minimum wage increases sector and year. No raw wage values are shown, wage rates sorted into quintiles.</p>
+    <p class="sub">State minimum wage increases by sector and year. No raw wage values are shown. Minimum Wage values sorted into quintiles. No data shown in years where minimum wage does not increase. </p>
   </div>
 
   <div class="controlbox">
@@ -65,13 +87,13 @@
   </div>
 
   <div class="legendbox">
-    <h4 id="legendTitle">Minimum Wage Quintile Legend</h4>
+    <h4 id="legendTitle">Minimum Wage Increase Quintile Legend</h4>
     <div class="legendrow"><span class="swatch" style="background:#FAE9A0FF"></span><span id="q1Label">Q1</span></div>
     <div class="legendrow"><span class="swatch" style="background:#DBD797FF"></span><span id="q2Label">Q2</span></div>
     <div class="legendrow"><span class="swatch" style="background:#9CB484FF"></span><span id="q3Label">Q3</span></div>
     <div class="legendrow"><span class="swatch" style="background:#5E9171FF"></span><span id="q4Label">Q4</span></div>
     <div class="legendrow"><span class="swatch" style="background:#005C55FF"></span><span id="q5Label">Q5</span></div>
-    <div class="legendrow"><span class="swatch" style="background:#ffffff"></span><span>No data</span></div>
+    <div class="legendrow"><span class="swatch" style="background:#ffffff"></span><span>No increase</span></div>
   </div>
 
   <div id="chart"></div>
@@ -150,7 +172,7 @@
 
     function updateLegend(sector) {
       const edges = MW_DASHBOARD_DATA.payload[sector].quintile_edges || [];
-      legendTitle.textContent = `Quintile Legend`;
+      legendTitle.textContent = `MW Quintile Legend`;
       if (edges.length === 6) {
         q1Label.textContent = `Q1: ${formatRange(edges[0], edges[1])}`;
         q2Label.textContent = `Q2: ${formatRange(edges[1], edges[2])}`;
@@ -170,9 +192,11 @@
       const sector = sectorSelect.value;
       const yearIndex = Number(yearSlider.value);
       yearLabel.textContent = MW_DASHBOARD_DATA.years[yearIndex];
-      layout.title.text = `${sector} — ${MW_DASHBOARD_DATA.years[yearIndex]}`;
+      // Use the external title box; avoid Plotly drawing a title inside the chart
+      layout.title.text = '';
       updateLegend(sector);
-      Plotly.react('chart', [makeTrace(sector, yearIndex)], layout, {responsive: true, displayModeBar: false});
+      // Disable scroll-to-zoom while keeping click/tap interactions
+      Plotly.react('chart', [makeTrace(sector, yearIndex)], layout, {responsive: true, displayModeBar: false, scrollZoom: false});
     }
 
     sectorSelect.addEventListener('change', render);

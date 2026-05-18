@@ -76,6 +76,69 @@
   }
 }
 
+@include breakpoint(max-width $large) {
+  .sidebar,
+  .sidebar__right {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    padding-top: 0;
+    margin-bottom: 0;
+    background: transparent;
+  }
+
+  .sidebar > :not(:first-child) {
+    display: none !important;
+  }
+
+  .sidebar > :first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .sidebar .author__avatar,
+  .sidebar .author__content {
+    display: block;
+  }
+
+  .sidebar .author__avatar {
+    width: auto;
+    margin-bottom: 0;
+
+    img {
+      display: block;
+      width: 72px;
+      max-width: 72px;
+      margin: 0;
+    }
+  }
+
+  .sidebar .author__content {
+    width: auto;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .sidebar .author__pronouns,
+  .sidebar .author__bio,
+  .sidebar .author__urls-wrapper,
+  .sidebar .author__desktop {
+    display: none !important;
+  }
+
+  .sidebar .author__content p,
+  .sidebar .author__urls-wrapper button,
+  .sidebar .author__urls {
+    display: none !important;
+  }
+}
+
 /*
    Author profile and links
    ========================================================================== */
